@@ -1,11 +1,11 @@
-package com.finalTask.tsk.domain;
+package com.finalTask.tsk.entity;
 
 import java.io.Serializable;
 
 public class Entity implements Serializable {
-    private long id;
+    private Long id;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

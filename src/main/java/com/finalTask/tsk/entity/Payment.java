@@ -1,27 +1,27 @@
-package com.finalTask.tsk.domain;
+package com.finalTask.tsk.entity;
 
 public class Payment extends Entity {
 
-    private long invoiceCode;
+    private Long invoiceCode;
     private String productCode;
-    private double quantity;
-    private double value;
-    private byte statusId;
+    private Double quantity;
+    private Double value;
+    private Byte statusId;
     private String notes;
 
-    public long getInvoiceCode() {
+    public Long getInvoiceCode() {
         return invoiceCode;
     }
     public String getProductCode() {
         return productCode;
     }
-    public double getQuantity() {
+    public Double getQuantity() {
         return quantity;
     }
-    public double getValue() {
+    public Double getValue() {
         return value;
     }
-    public byte getStatusId() {
+    public Byte getStatusId() {
         return statusId;
     }
     public String getNotes() {

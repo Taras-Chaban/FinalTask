@@ -1,6 +1,6 @@
 package com.finalTask.tsk.dao;
 
-import com.finalTask.tsk.domain.UserRequest;
+import com.finalTask.tsk.entity.UserRequest;
 import com.finalTask.tsk.exeption.UserCheckExeption;
 import org.junit.Assert;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.finalTask.tsk.domain;
+package com.finalTask.tsk.entity;
 
 public class UserRequest {
     //User data

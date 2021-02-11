@@ -1,26 +1,26 @@
-package com.finalTask.tsk.domain;
+package com.finalTask.tsk.entity;
 
 import java.sql.Timestamp;
 
 public class Invoice extends Entity {
 
-    private long code;
+    private Long code;
     private String userName;
-    private boolean isPaid;
-    private byte statusId;
+    private Boolean isPaid;
+    private Byte statusId;
     private Timestamp date;
     private String notes;
 
-    public long getCode() {
+    public Long getCode() {
         return code;
     }
     public String getUserName() {
         return userName;
     }
-    public boolean isPaid() {
+    public Boolean isPaid() {
         return isPaid;
     }
-    public byte getStatusId() {
+    public Byte getStatusId() {
         return statusId;
     }
     public Timestamp getDate() {
