@@ -1,6 +1,6 @@
 package com.finalTask.tsk.dao;
 
-import com.finalTask.tsk.entity.UserRequest;
+import com.finalTask.tsk.entity.User;
 import com.finalTask.tsk.exeption.UserCheckExeption;
 import org.junit.Assert;
 import org.junit.Test;
@@ -9,7 +9,7 @@ public class UserCheckDaoTest {
 
     @Test
     public void checkUser() {
-        UserRequest user = new UserRequest();
+        User user = new User();
         user.setId(6);
         user.setName("Admin");
         user.setPassword("admin");
@@ -19,7 +19,7 @@ public class UserCheckDaoTest {
         UserCheckDao dao = new UserCheckDao();
         boolean result = false;
         try {
-            result = dao.checkUser(user).isRegistered();
+            result = dao.checkUser(user);
         } catch (UserCheckExeption userCheckExeption) {
             userCheckExeption.printStackTrace();
         }
