@@ -30,6 +30,6 @@ public class UserCheckDao {
     }
 
     private Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/project");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/p8db", "root", "admin123");
     }
 }

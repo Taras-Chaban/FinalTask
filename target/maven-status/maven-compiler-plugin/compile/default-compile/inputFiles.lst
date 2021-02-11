@@ -1,1 +1,6 @@
-/Users/mac/IdeaProjects/myWebApp/myWebApp/src/main/java/com/finalTask/tsk/controller/ControllerServlet.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/domain/UserRequest.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/controller/ControllerServlet.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/DB/PoolConnectionBuilder.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/dao/UserCheckDao.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/exeption/UserCheckExeption.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/domain/UserResponce.java
