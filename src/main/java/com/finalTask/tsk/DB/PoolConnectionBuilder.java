@@ -9,9 +9,21 @@ import java.sql.SQLException;
 
 public class PoolConnectionBuilder {
 
+    private static PoolConnectionBuilder instance;
     private DataSource dataSource;
 
-    public PoolConnectionBuilder() {
+    public static synchronized PoolConnectionBuilder getInstance() {
+        if (instance == null) {
+            instance = new PoolConnectionBuilder();
+        }
+        return instance;
+    }
+
+    /**
+     * Returns a DB connection from the Pool Connections.
+     */
+
+    private PoolConnectionBuilder() {
         try {
             Context ctx = new InitialContext();
             dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/cashRegister");
@@ -20,8 +32,25 @@ public class PoolConnectionBuilder {
         }
     }
 
-    public Connection getConnection() throws SQLException {
+    public Connection getConnection2() throws SQLException {
         return dataSource.getConnection();
     }
 
+    public void commitAndClose(Connection connection) {
+        try {
+            connection.commit();
+            connection.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void rollbackAndClose(Connection connection) {
+        try {
+            connection.rollback();
+            connection.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
 }
