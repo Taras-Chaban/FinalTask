@@ -32,7 +32,7 @@ public class PoolConnectionBuilder {
         }
     }
 
-    public Connection getConnection2() throws SQLException {
+    public Connection getConnection() throws SQLException {
         return dataSource.getConnection();
     }
 

@@ -1,6 +1,13 @@
-/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/domain/UserRequest.java
-/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/controller/ControllerServlet.java
-/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/DB/PoolConnectionBuilder.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/entity/UserCart.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/entity/Payment.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/entity/Product.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/entity/Invoice.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/entity/EntityMap.java
 /Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/dao/UserCheckDao.java
 /Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/exeption/UserCheckExeption.java
-/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/domain/UserResponce.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/entity/User.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/dao/UserDao.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/entity/Entity.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/entity/Transaction.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/DB/PoolConnectionBuilder.java
+/Users/mac/IdeaProjects/FinalTask/src/main/java/com/finalTask/tsk/controller/Controller.java
