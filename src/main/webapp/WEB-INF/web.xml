@@ -18,9 +18,33 @@
     <servlet-name>Controller</servlet-name>
     <servlet-class>com.finalTask.tsk.controller.Controller</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>GetCookiesServlet</servlet-name>
+    <servlet-class>com.finalTask.tsk.controller.GetCookiesServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteCookiesServlet</servlet-name>
+    <servlet-class>com.finalTask.tsk.controller.DeleteCookiesServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SetCookiesServlet</servlet-name>
+    <servlet-class>com.finalTask.tsk.controller.SetCookiesServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>Controller</servlet-name>
     <url-pattern>/main</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetCookiesServlet</servlet-name>
+    <url-pattern>/get</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteCookiesServlet</servlet-name>
+    <url-pattern>/delete</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SetCookiesServlet</servlet-name>
+    <url-pattern>/set</url-pattern>
   </servlet-mapping>
 
 </web-app>
