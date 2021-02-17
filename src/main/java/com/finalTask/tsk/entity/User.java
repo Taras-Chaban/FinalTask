@@ -8,19 +8,23 @@ public class User extends Entity {
     private String phone;
     private String email;
     private String address;
-    private int role;
+    private Integer role;
     private String notes;
 
     //constructors
 
     public User() {}
 
-    public User(String name, String password) {
+    public User(String name, String password, String phone, String email, String address, Integer role) {
         this.name = name;
         this.password = password;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.role = role;
     }
 
-    //getters
+//getters
 
     public String getName() {
         return name;
