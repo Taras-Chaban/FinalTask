@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class CommandContainer {
-    private static Map<String, Command> commands = new TreeMap<String, Command>();
+    private static final Map<String, Command> commands = new TreeMap<>();
 
     static {
         commands.put("login", new LoginCommand());

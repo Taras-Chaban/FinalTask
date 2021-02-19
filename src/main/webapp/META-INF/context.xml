@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Context>
-    <Resource
-        driverClassName="com.mysql.cj.jdbc.Driver"
-        maxActive="4"
-        maxIdle="2"
-        maxWait="5000"
-        name="jdbc/cashRegister"
-        username="root"
-        password="admin123"
-        type="javax.sql.DataSource"
-        url="jdbc:mysql://localhost:3306/localDB"
-        validationQuery="SELECT 1">
-    </Resource>
+    <Resource name="jdbc/cashRegister"
+              auth="Container"
+              maxActive="4" maxIdle="2" maxWait="10000"
+              username="root" password="admin123"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              defaultAutoCommit="false"
+              type="javax.sql.DataSource"
+              defaultTransactionIsolation="READ_COMMITTED"
+              url="jdbc:mysql://127.0.0.1:3306/project"/>
+
 </Context>

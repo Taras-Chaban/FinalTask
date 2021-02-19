@@ -24,16 +24,19 @@ public class PoolConnectionBuilder {
      */
 
     private PoolConnectionBuilder() {
-        try {
-            Context ctx = new InitialContext();
-            dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/cashRegister");
-        } catch (NamingException e) {
-            e.printStackTrace();
-        }
     }
 
     public Connection getConnection() throws SQLException {
-        return dataSource.getConnection();
+        Connection connection = null;
+        try {
+            Context ctx = new InitialContext();
+            DataSource dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/cashRegister");
+            connection = dataSource.getConnection();
+        } catch (NamingException e) {
+            e.printStackTrace();
+        }
+
+        return connection;
     }
 
     public void commitAndClose(Connection connection) {

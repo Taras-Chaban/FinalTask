@@ -48,7 +48,7 @@ public class TestController extends HttpServlet {
 
 //        printWriter.println("<html>");
 
-        request.getRequestDispatcher("/WEB-INF/view/registration.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
 
 
 

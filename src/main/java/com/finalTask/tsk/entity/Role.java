@@ -1,6 +1,7 @@
 package com.finalTask.tsk.entity;
 
 public enum Role {
+    USER,
     CASHIER,
     SENIOR_CASHIER,
     MERCHANT,
