@@ -38,18 +38,7 @@ public class LoginCommand implements Command {
 
         Role userRole = Role.getRole(user);
 
-        if (userRole == Role.CASHIER) {
-            forward = Path.CASHIER_PAGE;
-        }
-        if (userRole == Role.SENIOR_CASHIER) {
-            forward = Path.SENIOR_CASHIER_PAGE;
-        }
-        if (userRole == Role.MERCHANT) {
-            forward = Path.MERCHANT_PAGE;
-        }
-        if (userRole == Role.ADMIN) {
-            forward = Path.ADMIN_PAGE;
-        }
+        forward = Path.START_PAGE;
 
         session.setAttribute("user", user);
         session.setAttribute("userRole", userRole);

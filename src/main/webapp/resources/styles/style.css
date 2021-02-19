@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.sidebar{
+    position: fixed;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    background: #171c1e;
+}
+
+.sidebar header{
+    font-size: 22px;
+    color: white;
+    line-height: 70px;
+    background: #171c1e;
+    user-select: none;
+    padding-left: 15px;
+}
+
+.blocks {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 33px;
+    font-size: 17px;
+    color: #8E9195;
+    padding-left: 15px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #32323a;
+    margin-bottom: 15px;
+    padding-bottom: 30px;
+    font-family: "Apple Braille", sans-serif;
+}
+
+.blocks a{
+    color: #8E9195;
+}
+
+.blocks p{
+    font-size: 11px;
+}
+
+.content{
+    padding-top: 20px;
+    padding-left: 250px;
+    font-family: "Apple Braille", sans-serif;
+
+}
