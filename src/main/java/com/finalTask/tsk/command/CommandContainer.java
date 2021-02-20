@@ -7,7 +7,20 @@ public class CommandContainer {
     private static final Map<String, Command> commands = new TreeMap<>();
 
     static {
+        Command forwards = new ForwardCommand();
         commands.put("login", new LoginCommand());
+        commands.put("registration", new RegistrationCommand());
+        /**
+         * FORWARD COMMANDS
+         */
+        commands.put("reg_forward", forwards);
+        commands.put("welcome_forward", forwards);
+        commands.put("goods_forward", forwards);
+        commands.put("archive_forward", forwards);
+        commands.put("payment_forward", forwards);
+        commands.put("refunds_forward", forwards);
+        commands.put("reports_forward", forwards);
+        commands.put("sales_forward", forwards);
     }
 
     public static Command get(String commandName) {

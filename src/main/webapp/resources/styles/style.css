@@ -28,8 +28,6 @@
     width: 100%;
     line-height: 33px;
     font-size: 17px;
-    color: #8E9195;
-    padding-left: 15px;
     box-sizing: border-box;
     border-bottom: 1px solid #32323a;
     margin-bottom: 15px;
@@ -39,10 +37,13 @@
 
 .blocks a{
     color: #8E9195;
+    padding-left: 15px;
 }
 
 .blocks p{
     font-size: 11px;
+    color: #8E9195;
+    padding-left: 15px;
 }
 
 .content{
@@ -50,4 +51,23 @@
     padding-left: 250px;
     font-family: "Apple Braille", sans-serif;
 
+}
+
+.lineBlocks:hover{
+    background-color: #06162b;
+    width: 100%;
+}
+
+#dialog {
+    text-align: center;
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 15px;
+    border: none;
 }

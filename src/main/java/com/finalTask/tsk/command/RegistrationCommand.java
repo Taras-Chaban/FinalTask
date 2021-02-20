@@ -7,7 +7,7 @@ import com.finalTask.tsk.entity.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class CreateUserCommand implements Command {
+public class RegistrationCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String forward;
@@ -28,7 +28,7 @@ public class CreateUserCommand implements Command {
 
         new UserDao().addUser(user);
 
-        forward = request.getServletPath();
+        forward = Path.REGISTRATION_PAGE;
 
         return forward;
     }
