@@ -15,9 +15,10 @@ public class ForwardCommand implements Command {
         forwards.put("welcome_forward", Path.START_PAGE);
         forwards.put("goods_forward", Path.GOODS_PAGE);
         forwards.put("payment_forward", Path.PAYMENT_PAGE);
-        forwards.put("refund_forward", Path.REFUNDS_PAGE);
+        forwards.put("refunds_forward", Path.REFUNDS_PAGE);
         forwards.put("reports_forward", Path.REPORTS_PAGE);
         forwards.put("sales_forward", Path.SALES_PAGE);
+        forwards.put("archive_forward", Path.ARCHIVE_PAGE);
     }
 
     @Override
