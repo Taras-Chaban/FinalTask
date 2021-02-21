@@ -7,5 +7,5 @@ import java.sql.SQLException;
 public interface EntityMap <E> {
     E mapRow(ResultSet resultSet);
 
-    void mapField(PreparedStatement preparedStatement, User user) throws SQLException;
+    void mapField(PreparedStatement preparedStatement, E entity) throws SQLException;
 }

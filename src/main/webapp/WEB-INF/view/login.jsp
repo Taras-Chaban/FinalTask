@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: mac
-  Date: 31.01.2021
-  Time: 1:05 дп
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
 <head>
