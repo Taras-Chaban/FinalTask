@@ -14,17 +14,17 @@ public class ProductDao {
     private static final Long PRODUCTS_ON_PAGE = 20L;
 
     private static final String SQL_ADD_PRODUCT = "INSERT INTO project.products " +
-            "(product_code, is_available, product_name_en, product_cost, product_quantity, reserved_quantity) " +
-            " VALUES (?, ?, ?, ?, ?, ?)";
+            "(product_code, product_name_en, product_cost, product_quantity) " +
+            " VALUES (?, ?, ?, ?)";
     private static final String SQL_GET_PRODUCTS = "SELECT " +
             "product_id, " +
             "product_code, " +
             "product_name_en, " +
             "product_cost, " +
             "product_quantity" +
-            " FROM project.products WHERE product_id < ? AND product_id > ?";
+            " FROM project.products";
 
-    public ArrayList<Product> getProducts(Long id) {
+    public ArrayList<Product> getProducts() {
         ArrayList<Product> products = new ArrayList<>();
         Connection connection = null;
         PreparedStatement preparedStatement;
@@ -32,8 +32,8 @@ public class ProductDao {
         try {
             connection = PoolConnectionBuilder.getInstance().getConnection();
             preparedStatement = connection.prepareStatement(SQL_GET_PRODUCTS);
-            preparedStatement.setLong(1, id + PRODUCTS_ON_PAGE + 1);
-            preparedStatement.setLong(2, id);
+            //preparedStatement.setLong(1, id + PRODUCTS_ON_PAGE + 1);
+            //preparedStatement.setLong(2, id);
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
@@ -97,11 +97,9 @@ public class ProductDao {
         public void mapField(PreparedStatement preparedStatement, Product product) throws SQLException {
             int i = 1;
             preparedStatement.setString(i++, product.getCode());
-            preparedStatement.setBoolean(i++, product.isAvailable());
             preparedStatement.setString(i++, product.getNameEn());
             preparedStatement.setDouble(i++, product.getCost());
             preparedStatement.setDouble(i++, product.getQuantity());
-            preparedStatement.setDouble(i, product.getReservedQuantity());
         }
     }
 

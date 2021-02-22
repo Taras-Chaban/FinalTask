@@ -22,7 +22,7 @@ public class AddProductCommand implements Command {
 
         forward = Path.ERROR_PAGE;
 
-        if (!isProductEmpty(product.getNameEn(), product.getCode(), product.getCost(), product.getQuantity())) {
+        if (isProductEmpty(product.getNameEn(), product.getCode(), product.getCost(), product.getQuantity())) {
             return forward;
         }
 
