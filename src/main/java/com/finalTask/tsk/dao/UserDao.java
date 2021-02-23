@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class UserDao {
     private static final String SQL_FIND_USER_BY_NAME =
@@ -29,6 +30,9 @@ public class UserDao {
             "(user_name, user_password, user_phone, user_email, user_address, role_id)" +
             "VALUES (?, ?, ?, ?, ?, ?)";
 
+    private static final String SQL_GET_USERS = "SELECT * FROM project.users " +
+            "WHERE user_id >= ? AND user_id <= ?";
+
     public void addUser(User user) {
         Connection connection = null;
         PreparedStatement preparedStatement;
@@ -46,6 +50,36 @@ public class UserDao {
         } finally {
             PoolConnectionBuilder.getInstance().commitAndClose(connection);
         }
+    }
+
+    public ArrayList<User> getUsers(Long start, Long end) {
+        ArrayList<User> users = new ArrayList<>();
+
+        PreparedStatement preparedStatement;
+        ResultSet rs;
+        Connection connection = null;
+        try {
+            connection = PoolConnectionBuilder.getInstance().getConnection();
+            preparedStatement = connection.prepareStatement(SQL_GET_USERS);
+            preparedStatement.setLong(1, start);
+            preparedStatement.setLong(2, end);
+            rs = preparedStatement.executeQuery();
+            UserMapper mapper = new UserMapper();
+
+            while (rs.next()) {
+                users.add(mapper.mapRow(rs));
+            }
+            rs.close();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            PoolConnectionBuilder.getInstance().rollbackAndClose(connection);
+            e.printStackTrace();
+        } finally {
+            PoolConnectionBuilder.getInstance().commitAndClose(connection);
+        }
+
+
+        return users;
     }
 
     public User findUserById(Long id) {

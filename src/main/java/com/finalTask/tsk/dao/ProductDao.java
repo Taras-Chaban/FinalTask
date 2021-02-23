@@ -11,8 +11,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ProductDao {
-    private static final Long PRODUCTS_ON_PAGE = 20L;
-
     private static final String SQL_ADD_PRODUCT = "INSERT INTO project.products " +
             "(product_code, product_name_en, product_cost, product_quantity) " +
             " VALUES (?, ?, ?, ?)";
@@ -22,9 +20,9 @@ public class ProductDao {
             "product_name_en, " +
             "product_cost, " +
             "product_quantity" +
-            " FROM project.products";
+            " FROM project.products WHERE product_id >= ? AND product_id <= ?";
 
-    public ArrayList<Product> getProducts() {
+    public ArrayList<Product> getProducts(Long start, Long end) {
         ArrayList<Product> products = new ArrayList<>();
         Connection connection = null;
         PreparedStatement preparedStatement;
@@ -32,8 +30,9 @@ public class ProductDao {
         try {
             connection = PoolConnectionBuilder.getInstance().getConnection();
             preparedStatement = connection.prepareStatement(SQL_GET_PRODUCTS);
-            //preparedStatement.setLong(1, id + PRODUCTS_ON_PAGE + 1);
-            //preparedStatement.setLong(2, id);
+            //set range for get products
+            preparedStatement.setLong(1, start);
+            preparedStatement.setLong(2, end);
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {

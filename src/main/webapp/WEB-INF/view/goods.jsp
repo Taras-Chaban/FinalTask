@@ -17,9 +17,8 @@
             <p>МОЯ КАСА</p>
             <div class="lineBlocks">
                 <li>
-                    <a href="/WebApp_war/main?command=sales_forward"
-                    ><i class="fas fa-arrow-alt-circle-right"></i> Продаж</a
-                    >
+                    <a href="/WebApp_war/main?command=sales_forward">
+                        <i class="fas fa-arrow-alt-circle-right"></i> Продаж</a>
                 </li>
             </div>
             <div class="lineBlocks">
@@ -91,8 +90,8 @@
         <div class="close-icon">
             <i onclick="performClose()" class="far fa-times-circle"></i>
         </div>
-        <form method="get" action="/WebApp_war/main" class="form">
-            <input type="hidden" name="command" value="add_product" />
+        <form method="post" action="/WebApp_war/main" class="form">
+            <input type="hidden" name="command" value="add_product"/>
             <div class="gradient-border">
                 <input
                         type="text"
@@ -157,11 +156,11 @@
             <tbody>
             <c:forEach var="product" items="${products}">
                 <tr>
-                    <td><c:out value="${product.getId()}" /></td>
-                    <td><c:out value="${product.getNameEn()}" /></td>
-                    <td><c:out value="${product.getCode()}" /></td>
-                    <td><c:out value="${product.getCost()}" /></td>
-                    <td><c:out value="${product.getQuantity()}" /></td>
+                    <td><c:out value="${product.getId()}"/></td>
+                    <td><c:out value="${product.getNameEn()}"/></td>
+                    <td><c:out value="${product.getCode()}"/></td>
+                    <td><c:out value="${product.getCost()}"/></td>
+                    <td><c:out value="${product.getQuantity()}"/></td>
                 </tr>
             </c:forEach>
             </tbody>

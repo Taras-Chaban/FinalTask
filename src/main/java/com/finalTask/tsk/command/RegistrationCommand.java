@@ -1,6 +1,7 @@
 package com.finalTask.tsk.command;
 
-import com.finalTask.tsk.constants.Path;
+import com.finalTask.tsk.constants.ForwardPath;
+import com.finalTask.tsk.constants.RedirectPath;
 import com.finalTask.tsk.dao.UserDao;
 import com.finalTask.tsk.entity.User;
 
@@ -20,7 +21,7 @@ public class RegistrationCommand implements Command {
         String role = request.getParameter("role");
 
         if (!dataValidation(name, password, phone, email, address, role)) {
-            forward = Path.ERROR_PAGE;
+            forward = ForwardPath.ERROR_PAGE;
             return forward;
         }
 
@@ -28,7 +29,7 @@ public class RegistrationCommand implements Command {
 
         new UserDao().addUser(user);
 
-        forward = Path.REGISTRATION_PAGE;
+        forward = RedirectPath.REGISTRATION_PAGE;
 
         return forward;
     }

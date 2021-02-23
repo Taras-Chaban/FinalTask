@@ -1,6 +1,7 @@
 package com.finalTask.tsk.command;
 
-import com.finalTask.tsk.constants.Path;
+import com.finalTask.tsk.constants.ForwardPath;
+import com.finalTask.tsk.constants.RedirectPath;
 import com.finalTask.tsk.dao.ProductDao;
 import com.finalTask.tsk.entity.Product;
 
@@ -20,13 +21,13 @@ public class AddProductCommand implements Command {
         product.setCost(Double.parseDouble(request.getParameter("product_cost")));
         product.setQuantity(Double.parseDouble(request.getParameter("quantity")));
 
-        forward = Path.ERROR_PAGE;
+        forward = ForwardPath.ERROR_PAGE;
 
         if (isProductEmpty(product.getNameEn(), product.getCode(), product.getCost(), product.getQuantity())) {
             return forward;
         }
 
-        forward = Path.GOODS_PAGE;
+        forward = RedirectPath.GOODS_PAGE;
         new ProductDao().addProduct(product);
 
 

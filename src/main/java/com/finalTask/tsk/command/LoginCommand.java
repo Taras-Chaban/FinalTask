@@ -1,6 +1,7 @@
 package com.finalTask.tsk.command;
 
-import com.finalTask.tsk.constants.Path;
+import com.finalTask.tsk.constants.ForwardPath;
+import com.finalTask.tsk.constants.RedirectPath;
 import com.finalTask.tsk.dao.UserDao;
 import com.finalTask.tsk.entity.Role;
 import com.finalTask.tsk.entity.User;
@@ -8,7 +9,6 @@ import com.finalTask.tsk.entity.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 
 public class LoginCommand implements Command {
     @Override
@@ -18,7 +18,7 @@ public class LoginCommand implements Command {
         String name = request.getParameter("name");
         String password = request.getParameter("password");
 
-        String forward = Path.ERROR_PAGE;
+        String forward = ForwardPath.ERROR_PAGE;
         String errorMessage;
 
         if (!isAuthDataEmpty(name, password)) {
@@ -29,7 +29,7 @@ public class LoginCommand implements Command {
 
         User user = new UserDao().findUserByName(name);
 
-        forward = Path.LOGIN_PAGE;
+        forward = ForwardPath.LOGIN_PAGE;
 
         if (user == null || !password.equals(user.getPassword())) {
             errorMessage = "User doesnt registered or wrong password";
@@ -39,7 +39,7 @@ public class LoginCommand implements Command {
 
         Role userRole = Role.getRole(user);
 
-        forward = Path.START_PAGE;
+        forward = RedirectPath.START_PAGE;
 
         session.setAttribute("user", user);
         session.setAttribute("userRole", userRole);

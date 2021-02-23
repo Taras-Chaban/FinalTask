@@ -17,7 +17,7 @@
                 <img src="resources/images/img-01.png" alt="IMG">
             </div>
 
-            <form class="login100-form validate-form" action="/WebApp_war/main">
+            <form class="login100-form validate-form" method="post" action="/WebApp_war/main">
 					<span class="login100-form-title">
 						Member Login
 					</span>
