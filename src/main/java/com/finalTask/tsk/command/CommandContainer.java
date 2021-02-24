@@ -20,6 +20,7 @@ public class CommandContainer {
         commands.put("add_product", new AddProductCommand());
         commands.put("display_product", new DisplayProductsCommand());
         commands.put("display_users", new DisplayUsersCommand());
+        commands.put("display_archive", new DisplayArchiveCommand());
 
     }
 

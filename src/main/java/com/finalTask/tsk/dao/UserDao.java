@@ -84,7 +84,7 @@ public class UserDao {
         }
     }
 
-    public ArrayList<User> getUsers(Long start, Long end) {
+    public ArrayList<User> getUsers(int start, int end) {
         ArrayList<User> users = new ArrayList<>();
 
         PreparedStatement preparedStatement;

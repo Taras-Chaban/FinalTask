@@ -16,6 +16,7 @@ public class ProductDao {
     private static final String SQL_ADD_PRODUCT = "INSERT INTO project.products " +
             "(product_code, product_name_en, product_cost, product_quantity) " +
             " VALUES (?, ?, ?, ?)";
+
     private static final String SQL_GET_PRODUCTS = "SELECT " +
             "product_id, " +
             "product_code, " +
@@ -37,8 +38,8 @@ public class ProductDao {
             connection = PoolConnectionBuilder.getInstance().getConnection();
             preparedStatement = connection.prepareStatement(SQL_GET_PRODUCTS);
             //set range for get products
-            preparedStatement.setLong(1, start);
-            preparedStatement.setLong(2, end);
+            preparedStatement.setInt(1, start);
+            preparedStatement.setInt(2, end);
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {

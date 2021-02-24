@@ -7,9 +7,9 @@ public class Invoice extends Entity {
     private Long code;
     private String userName;
     private Boolean isPaid;
-    private Byte statusId;
+    private Integer statusId;
     private Timestamp date;
-    private String notes;
+    private Double price;
 
     public Long getCode() {
         return code;
@@ -20,14 +20,14 @@ public class Invoice extends Entity {
     public Boolean isPaid() {
         return isPaid;
     }
-    public Byte getStatusId() {
+    public Integer getStatusId() {
         return statusId;
     }
     public Timestamp getDate() {
         return date;
     }
-    public String getNotes() {
-        return notes;
+    public Double getPrice() {
+        return price;
     }
 
     public void setCode(long code) {
@@ -39,13 +39,13 @@ public class Invoice extends Entity {
     public void setPaid(boolean paid) {
         isPaid = paid;
     }
-    public void setStatusId(byte statusId) {
+    public void setStatusId(Integer statusId) {
         this.statusId = statusId;
     }
     public void setDate(Timestamp date) {
         this.date = date;
     }
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }

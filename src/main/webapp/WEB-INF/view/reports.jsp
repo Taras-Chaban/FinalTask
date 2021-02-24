@@ -20,7 +20,7 @@
         <div class="blocks">
             <p>УПРАВЛІННЯ</p>
             <div class="lineBlocks"><li><a href="/WebApp_war/main?command=display_users&page=1"><i class="fas fa-chalkboard-teacher"></i> Касири</a></li></div>
-            <div class="lineBlocks"><li><a href="/WebApp_war/main?command=archive_forward"><i class="fas fa-clipboard-list"></i> Архів чеків</a></li></div>
+            <div class="lineBlocks"><li><a href="/WebApp_war/main?command=display_archive&page=1"><i class="fas fa-clipboard-list"></i> Архів чеків</a></li></div>
             <div class="lineBlocks"><li><a href="/WebApp_war/main?command=display_product&page=1"><i class="fas fa-barcode"></i> Товари</a></li></div>
         </div>
         <div class="blocks">

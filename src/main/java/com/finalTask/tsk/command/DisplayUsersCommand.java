@@ -19,7 +19,7 @@ public class DisplayUsersCommand implements Command {
 
         int currentPage = Integer.parseInt(request.getParameter("page"));
 
-        long start = currentPage * USERS_NUMBER_ON_PAGE - USERS_NUMBER_ON_PAGE + 1;
+        int start = currentPage * USERS_NUMBER_ON_PAGE - USERS_NUMBER_ON_PAGE + 1;
 
         request.setAttribute("users", dao.getUsers(start, start + USERS_NUMBER_ON_PAGE - 1));
         request.setAttribute("numOfPages", pages);

@@ -47,7 +47,7 @@
             </div>
             <div class="lineBlocks">
                 <li>
-                    <a href="/WebApp_war/main?command=archive_forward"
+                    <a href="/WebApp_war/main?command=display_archive&page=1"
                     ><i class="fas fa-clipboard-list"></i> Архів чеків</a
                     >
                 </li>
