@@ -5,13 +5,15 @@ import com.finalTask.tsk.constants.RedirectPath;
 import com.finalTask.tsk.dao.ProductDao;
 import com.finalTask.tsk.entity.Product;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 public class AddProductCommand implements Command {
     @Override
     public String execute(HttpServletRequest request,
-                          HttpServletResponse response) {
+                          HttpServletResponse response) throws IOException, ServletException {
         String forward;
 
         Product product = new Product();
@@ -28,8 +30,8 @@ public class AddProductCommand implements Command {
         }
 
         forward = RedirectPath.GOODS_PAGE;
-        new ProductDao().addProduct(product);
 
+        new ProductDao().addProduct(product);
 
         return forward;
     }

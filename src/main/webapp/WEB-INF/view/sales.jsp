@@ -39,7 +39,7 @@
             <p>УПРАВЛІННЯ</p>
             <div class="lineBlocks">
                 <li>
-                    <a href="/WebApp_war/main?command=reg_forward"
+                    <a href="/WebApp_war/main?command=display_users&page=1"
                     ><i class="fas fa-chalkboard-teacher"></i> Касири</a
                     >
                 </li>
@@ -53,7 +53,7 @@
             </div>
             <div class="lineBlocks">
                 <li>
-                    <a href="/WebApp_war/main?command=goods_forward"
+                    <a href="/WebApp_war/main?command=display_product&page=1"
                     ><i class="fas fa-barcode"></i> Товари</a
                     >
                 </li>

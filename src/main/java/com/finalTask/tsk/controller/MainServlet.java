@@ -19,7 +19,6 @@ public class MainServlet extends HttpServlet {
     }
 
     private void process(HttpServletRequest request, HttpServletResponse response, String method) throws IOException, ServletException {
-
         String commandName = request.getParameter("command");
         Command command = CommandContainer.get(commandName);
 

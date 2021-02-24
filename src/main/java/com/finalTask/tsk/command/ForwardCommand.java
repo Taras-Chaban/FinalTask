@@ -28,14 +28,7 @@ public class ForwardCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-
         String forward = request.getParameter("command");
-
-        if (forward.equals(GOODS_FORWARD)) {
-            request.setAttribute("products", new ProductDao().getProducts(1L, 15L));
-        } else if (forward.equals(REG_FORWARD)) {
-            request.setAttribute("users", new UserDao().getUsers(1L, 15L));
-        }
 
         return forwards.get(forward);
     }

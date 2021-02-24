@@ -41,7 +41,7 @@
             <p>УПРАВЛІННЯ</p>
             <div class="lineBlocks">
                 <li>
-                    <a style="color: white" href="#"
+                    <a style="color: white" href="/WebApp_war/main?command=display_users&page=1"
                     ><i class="fas fa-chalkboard-teacher"></i> Касири</a
                     >
                 </li>
@@ -55,7 +55,7 @@
             </div>
             <div class="lineBlocks">
                 <li>
-                    <a href="/WebApp_war/main?command=goods_forward"
+                    <a href="/WebApp_war/main?command=display_product&page=1"
                     ><i class="fas fa-barcode"></i> Товари</a
                     >
                 </li>
@@ -117,6 +117,27 @@
         </c:forEach>
         </tbody>
     </table>
+    <%--Pagination--%>
+    <div class="pagination_menu">
+        <c:if test="${currentPage != 1}">
+            <a class="pagination" href="main?command=display_users&page=${currentPage - 1}">&laquo;</a>
+        </c:if>
+        <%--For displaying Page numbers.--%>
+        <c:forEach begin="1" end="${numOfPages}" var="i">
+            <c:choose>
+                <c:when test="${currentPage eq i}">
+                    <a class="current-page">${i}</a>
+                </c:when>
+                <c:otherwise>
+                    <a href="main?command=display_users&page=${i}">${i}</a>
+                </c:otherwise>
+            </c:choose>
+        </c:forEach>
+        <%--For displaying Next link--%>
+        <c:if test="${currentPage < numOfPages}">
+            <a href="main?command=display_users&page=${currentPage + 1}">&raquo;</a>
+        </c:if>
+    </div>
 
     <dialog id="dialog">
         <div class="registration_form">
@@ -124,6 +145,8 @@
                 <i onclick="performClose()" class="far fa-times-circle"></i>
             </div>
             <form method="post" action="/WebApp_war/main" class="form">
+                <input type="hidden" name="command" value="registration" />
+                <input type="hidden" name="command" value="registration" />
                 <input type="hidden" name="command" value="registration" />
                 <div class="gradient-border">
                     <input

@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ProductDao {
+    private static final String SQL_GET_COUNT_OF_ROWS = "SELECT count(product_id) from project.products";
+
     private static final String SQL_ADD_PRODUCT = "INSERT INTO project.products " +
             "(product_code, product_name_en, product_cost, product_quantity) " +
             " VALUES (?, ?, ?, ?)";
@@ -22,7 +24,11 @@ public class ProductDao {
             "product_quantity" +
             " FROM project.products WHERE product_id >= ? AND product_id <= ?";
 
-    public ArrayList<Product> getProducts(Long start, Long end) {
+    public int getCountOfRows() {
+        return new UserDao().getInt(SQL_GET_COUNT_OF_ROWS);
+    }
+
+    public ArrayList<Product> getProducts(int start, int end) {
         ArrayList<Product> products = new ArrayList<>();
         Connection connection = null;
         PreparedStatement preparedStatement;

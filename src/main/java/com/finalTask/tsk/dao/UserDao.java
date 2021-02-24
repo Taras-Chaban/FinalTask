@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class UserDao {
+    private static final String SQL_GET_COUNT_OF_ROWS = "SELECT count(user_id) from project.users";
+
     private static final String SQL_FIND_USER_BY_NAME =
             "SELECT * FROM project.users WHERE user_name = ?";
 
@@ -32,6 +34,36 @@ public class UserDao {
 
     private static final String SQL_GET_USERS = "SELECT * FROM project.users " +
             "WHERE user_id >= ? AND user_id <= ?";
+
+    public int getCountOfRows() {
+        return getInt(SQL_GET_COUNT_OF_ROWS);
+    }
+
+    static int getInt(String sqlGetCountOfRows) {
+        int rows = -1;
+
+        Connection connection = null;
+        PreparedStatement preparedStatement;
+        ResultSet resultSet;
+
+        try {
+            connection = PoolConnectionBuilder.getInstance().getConnection();
+            preparedStatement = connection.prepareStatement(sqlGetCountOfRows);
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                rows = resultSet.getInt(1);
+            }
+
+        } catch (SQLException e) {
+            PoolConnectionBuilder.getInstance().rollbackAndClose(connection);
+            e.printStackTrace();
+        } finally {
+            PoolConnectionBuilder.getInstance().commitAndClose(connection);
+        }
+
+        return rows;
+    }
 
     public void addUser(User user) {
         Connection connection = null;

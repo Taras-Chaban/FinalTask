@@ -335,3 +335,24 @@
     display: flex;
     margin-top: 25px;
 }
+
+
+.pagination_menu {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination_menu a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+
+.current-page {
+    background-color: #a0d2e2;
+    color: white;
+    border-radius: 5px;
+}
