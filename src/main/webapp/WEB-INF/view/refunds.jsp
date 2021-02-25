@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
@@ -34,7 +35,42 @@
 
 <div class="content">
     <h1>Поверення товару</h1></br></br>
-</div>
 
+    <c:forEach var="invoice" items="${invoices}">
+        <p>Invoice #: <c:out value="${invoice.getCode()}"></c:out></p>
+        <form method="get" action="/WebApp_war/main">
+            <input type="hidden" name="command" value="refund_payment">
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Товари</th>
+                    <th>Кількість</th>
+                    <th>Вартість</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach var="payment" items="${payments}">
+                    <c:if test="${invoice.getCode() == payment.getInvoiceCode()}">
+                        <tr>
+                            <td><c:out value="${payment.getProductCode()}"/></td>
+                            <td><c:out value="${payment.getQuantity()}"/></td>
+                            <td><c:out value="${payment.getValue()}"/></td>
+                            <td>
+                                <input type="checkbox" name="checked_payment${payment.getId()}" value="${payment.getId()}">
+                            </td>
+                        </tr>
+                    </c:if>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
+        <br/><br/>
+
+        <input type="submit" value="Refund">
+        </form>
+    </c:forEach>
+</div>
 </body>
 </html>

@@ -4,6 +4,7 @@ public class Payment extends Entity {
 
     private Long invoiceCode;
     private String productCode;
+    private String productName;
     private Double quantity;
     private Double value;
     private Byte statusId;
@@ -27,6 +28,9 @@ public class Payment extends Entity {
     public String getNotes() {
         return notes;
     }
+    public String getProductName() {
+        return productName;
+    }
 
     public void setInvoiceCode(long invoiceCode) {
         this.invoiceCode = invoiceCode;
@@ -45,5 +49,8 @@ public class Payment extends Entity {
     }
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 }

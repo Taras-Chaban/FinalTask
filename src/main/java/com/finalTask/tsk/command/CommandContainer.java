@@ -21,7 +21,8 @@ public class CommandContainer {
         commands.put("display_product", new DisplayProductsCommand());
         commands.put("display_users", new DisplayUsersCommand());
         commands.put("display_archive", new DisplayArchiveCommand());
-
+        commands.put("display_refunds", new DisplayRefundsCommand());
+        commands.put("refund_payment", new RefundPaymentCommand());
     }
 
     public static Command get(String commandName) {
