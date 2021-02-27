@@ -15,7 +15,7 @@
             <p>МОЯ КАСА</p>
             <div class="lineBlocks"><li><a href="/WebApp_war/main?command=sales_forward"><i class="fas fa-arrow-alt-circle-right"></i> Продаж</a></li></div>
             <div class="lineBlocks"><li><a href="/WebApp_war/main?command=display_refunds"><i class="fas fa-arrow-alt-circle-left"></i> Повернення</a></li></div>
-            <div class="lineBlocks"><li><a href="/WebApp_war/main?command=reports_forward"><i class="far fa-list-alt"></i> Звіти</a></li></div>
+            <div class="lineBlocks"><li><a href="/WebApp_war/main?command=display_reports"><i class="far fa-list-alt"></i> Звіти</a></li></div>
         </div>
         <div class="blocks">
             <p>УПРАВЛІННЯ</p>

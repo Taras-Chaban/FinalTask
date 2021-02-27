@@ -11,8 +11,8 @@ public class CommandContainer {
         commands.put("welcome_forward", forwards);
         commands.put("archive_forward", forwards);
         commands.put("payment_forward", forwards);
-        commands.put("refunds_forward", forwards);
-        commands.put("reports_forward", forwards);
+        commands.put("refunds_forward", forwards); //need to delete
+        commands.put("reports_forward", forwards); //need to delete
         commands.put("sales_forward", forwards);
 
         commands.put("login", new LoginCommand());
@@ -23,6 +23,7 @@ public class CommandContainer {
         commands.put("display_archive", new DisplayArchiveCommand());
         commands.put("display_refunds", new DisplayRefundsCommand());
         commands.put("refund_payment", new RefundPaymentCommand());
+        commands.put("display_reports", new DisplayReportsCommand());
     }
 
     public static Command get(String commandName) {

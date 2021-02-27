@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
@@ -34,6 +35,42 @@
 
 <div class="content">
     <h1>Звіти</h1></br></br>
+
+    <div class="date_choice">
+        <form>
+            <label for="data">Enter date:</label><br>
+            <input id="data" type="date" name="date" required>
+            <button type="submit">create X - report</button>
+            <button type="submit">create Z - report</button>
+        </form>
+    </div>
+    <br>
+    <div class="table-wrapper">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Cash Before report</th>
+                <th>Cash After report</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="report" items="${reports}">
+                <tr>
+                    <td><c:out value="${report.getId()}"/></td>
+                    <td><c:out value="${report.getReportType()}"/></td>
+                    <td><c:out value="${report.getDate()}"/></td>
+                    <td><c:out value="${report.getCashBefore()}"/></td>
+                    <td><c:out value="${report.getCashAfter()}"/></td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+
+
 </div>
 
 </body>
